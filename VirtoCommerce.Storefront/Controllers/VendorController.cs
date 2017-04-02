@@ -1,9 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using VirtoCommerce.Storefront.Model;
+using VirtoCommerce.Storefront.Model.Catalog;
 using VirtoCommerce.Storefront.Model.Common;
 using VirtoCommerce.Storefront.Model.Customer.Services;
+using VirtoCommerce.Storefront.Model.Services;
 
 namespace VirtoCommerce.Storefront.Controllers
 {
@@ -11,11 +14,13 @@ namespace VirtoCommerce.Storefront.Controllers
     public class VendorController : StorefrontControllerBase
     {
         private readonly ICustomerService _customerService;
+        private readonly ICatalogSearchService _catalogSearchService;
 
-        public VendorController(WorkContext context, IStorefrontUrlBuilder urlBuilder, ICustomerService customerService)
+        public VendorController(WorkContext context, IStorefrontUrlBuilder urlBuilder, ICustomerService customerService, ICatalogSearchService catalogSearchService)
             : base(context, urlBuilder)
         {
             _customerService = customerService;
+            _catalogSearchService = catalogSearchService;
         }
 
         /// <summary>
@@ -27,16 +32,28 @@ namespace VirtoCommerce.Storefront.Controllers
         [HttpGet]
         public async Task<ActionResult> VendorDetails(string vendorId)
         {
-            var vendor = await _customerService.GetVendorByIdAsync(vendorId);
+            var vendor = (await _customerService.GetVendorsByIdsAsync(base.WorkContext.CurrentStore, base.WorkContext.CurrentLanguage, vendorId)).FirstOrDefault();
 
             if (vendor != null)
             {
-                WorkContext.CurrentVendor = vendor;
-                WorkContext.CurrentPageSeo = new SeoInfo
+                vendor.Products = new MutablePagedList<Product>((pageNumber, pageSize, sortInfos) =>
                 {
-                    Title = vendor.Name,
-                    Slug = string.Concat("/vendor/", vendorId)
-                };
+                    var criteria = new ProductSearchCriteria
+                    {
+                        VendorId = vendorId,
+                        PageNumber = pageNumber,
+                        PageSize = pageSize,
+                        SortBy = SortInfo.ToString(sortInfos),
+                        ResponseGroup = base.WorkContext.CurrentProductSearchCriteria.ResponseGroup
+                    };
+
+                    var searchResult = _catalogSearchService.SearchProducts(criteria);
+                    return searchResult.Products;
+                }, 1, ProductSearchCriteria.DefaultPageSize);
+
+                WorkContext.CurrentPageSeo = vendor.SeoInfo;
+                WorkContext.CurrentVendor = vendor;
+
                 return View("vendor", WorkContext);
             }
 

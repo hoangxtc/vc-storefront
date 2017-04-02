@@ -52,6 +52,9 @@ storefrontApp.service('catalogService', ['$http', function ($http) {
     return {
         getProduct: function (productIds) {
             return $http.get('storefrontapi/products?productIds=' + productIds + '&t=' + new Date().getTime());
+        },
+        search: function (criteria) {
+            return $http.post('storefrontapi/catalog/search', { searchCriteria: criteria });
         }
     }
 }]);
@@ -73,6 +76,9 @@ storefrontApp.service('cartService', ['$http', function ($http) {
         removeLineItem: function (lineItemId) {
             return $http.delete('storefrontapi/cart/items?lineItemId=' + lineItemId);
         },
+        changeLineItemPrice: function (lineItemId, newPrice) {
+        	return $http.put('storefrontapi/cart/items/price', { lineItemId: lineItemId, newPrice: newPrice});
+        },
         clearCart: function () {
             return $http.post('storefrontapi/cart/clear');
         },
@@ -89,16 +95,22 @@ storefrontApp.service('cartService', ['$http', function ($http) {
             return $http.delete('storefrontapi/cart/coupons');
         },
         addOrUpdateShipment: function (shipment) {
-            return $http.post('storefrontapi/cart/shipments', { shipment: shipment });
+            return $http.post('storefrontapi/cart/shipments', shipment);
         },
         addOrUpdatePayment: function (payment) {
-            return $http.post('storefrontapi/cart/payments', { payment: payment });
+            return $http.post('storefrontapi/cart/payments', payment );
         },
         getAvailableShippingMethods: function (shipmentId) {
             return $http.get('storefrontapi/cart/shipments/' + shipmentId + '/shippingmethods?t=' + new Date().getTime());
         },
         getAvailablePaymentMethods: function () {
             return $http.get('storefrontapi/cart/paymentmethods?t=' + new Date().getTime());
+        },
+        addOrUpdatePaymentPlan: function (plan) {
+            return $http.post('storefrontapi/cart/paymentPlan', plan);
+        },
+        removePaymentPlan: function () {
+            return $http.delete('storefrontapi/cart/paymentPlan');
         },
         createOrder: function (bankCardInfo) {
             return $http.post('storefrontapi/cart/createorder', { bankCardInfo: bankCardInfo });

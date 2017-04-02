@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VirtoCommerce.Storefront</RootNamespace>
     <AssemblyName>VirtoCommerce.Storefront</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -22,6 +22,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,25 +49,20 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CacheManager.Core, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CacheManager.Core.0.8.0\lib\net45\CacheManager.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CacheManager.Core, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Core.0.9.3\lib\net45\CacheManager.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CacheManager.Serialization.Json, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CacheManager.Serialization.Json.0.8.0\lib\net45\CacheManager.Serialization.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CacheManager.Serialization.Json, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Serialization.Json.0.9.3\lib\net45\CacheManager.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="CacheManager.StackExchange.Redis, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CacheManager.StackExchange.Redis.0.8.0\lib\net45\CacheManager.StackExchange.Redis.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CacheManager.StackExchange.Redis, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.StackExchange.Redis.0.9.3\lib\net45\CacheManager.StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="CacheManager.SystemRuntimeCaching, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CacheManager.SystemRuntimeCaching.0.8.0\lib\net45\CacheManager.SystemRuntimeCaching.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CacheManager.SystemRuntimeCaching, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.SystemRuntimeCaching.0.9.3\lib\net45\CacheManager.SystemRuntimeCaching.dll</HintPath>
     </Reference>
-    <Reference Include="CacheManager.Web, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CacheManager.Web.0.8.0\lib\net45\CacheManager.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="CacheManager.Web, Version=0.9.3.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Web.0.9.3\lib\net45\CacheManager.Web.dll</HintPath>
     </Reference>
     <Reference Include="DotLiquid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotLiquid.VirtoCommerce.1.8.3\lib\NET45\DotLiquid.dll</HintPath>
@@ -80,33 +76,26 @@
       <HintPath>..\packages\Markdig.0.7.2\lib\net40\Markdig.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -116,22 +105,18 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.2.0.4\lib\net45\Microsoft.Azure.KeyVault.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -181,17 +166,19 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.4\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=8.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.8.1.1\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\NLog.4.4.3\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="Omu.ValueInjecter, Version=2.3.3.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
       <HintPath>..\packages\valueinjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
@@ -209,20 +196,23 @@
       <HintPath>..\packages\StackExchange.Redis.1.0.488\lib\net45\StackExchange.Redis.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StackExchange.Redis.StrongName, Version=1.1.608.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.StrongName.1.1.608\lib\net46\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -230,86 +220,30 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="VirtoCommerce.CartModule.Client, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.CartModule.Client.2.11.0\lib\net451\VirtoCommerce.CartModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.CatalogModule.Client, Version=2.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.CatalogModule.Client.2.14.0\lib\net451\VirtoCommerce.CatalogModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.ContentModule.Client, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.ContentModule.Client.2.11.0\lib\net451\VirtoCommerce.ContentModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.CoreModule.Client, Version=2.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\VirtoCommerce.CoreModule.Client.2.14.0\lib\net451\VirtoCommerce.CoreModule.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="VirtoCommerce.CustomerModule.Client, Version=2.11.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.CustomerModule.Client.2.11.2\lib\net451\VirtoCommerce.CustomerModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.InventoryModule.Client, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.InventoryModule.Client.2.11.0\lib\net451\VirtoCommerce.InventoryModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.MarketingModule.Client, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.MarketingModule.Client.2.11.0\lib\net451\VirtoCommerce.MarketingModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.OrderModule.Client, Version=2.11.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.OrderModule.Client.2.11.1\lib\net451\VirtoCommerce.OrderModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.Platform.Client, Version=2.11.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.Platform.Client.2.11.5\lib\net451\VirtoCommerce.Platform.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.Platform.Client.Security, Version=2.11.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.Platform.Client.Security.2.11.4\lib\net451\VirtoCommerce.Platform.Client.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.PricingModule.Client, Version=2.13.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.PricingModule.Client.2.13.0\lib\net451\VirtoCommerce.PricingModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.QuoteModule.Client, Version=2.11.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.QuoteModule.Client.2.11.1\lib\net451\VirtoCommerce.QuoteModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.SearchModule.Client, Version=2.11.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.SearchModule.Client.2.11.3\lib\net451\VirtoCommerce.SearchModule.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VirtoCommerce.StoreModule.Client, Version=2.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VirtoCommerce.StoreModule.Client.2.11.0\lib\net451\VirtoCommerce.StoreModule.Client.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="VirtoCommerce.Tools, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VirtoCommerce.Tools.1.2.0\lib\net461\VirtoCommerce.Tools.dll</HintPath>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="YamlDotNet, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YamlDotNet.3.7.0\lib\net35\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.4.0.0\lib\net35\YamlDotNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -368,6 +302,7 @@
     <Content Include="App_Data\Themes\default\assets\closed-box.svg" />
     <Content Include="App_Data\Themes\default\assets\collection-view-grid.svg" />
     <Content Include="App_Data\Themes\default\assets\collection-view-list.svg" />
+    <Content Include="App_Data\Themes\default\assets\common-components.css" />
     <Content Include="App_Data\Themes\default\assets\customer_area.js" />
     <Content Include="App_Data\Themes\default\assets\dankort.svg" />
     <Content Include="App_Data\Themes\default\assets\ideal-image-slider-default-theme.css" />
@@ -399,29 +334,43 @@
     <Content Include="App_Data\Themes\default\assets\informer-loader.gif" />
     <Content Include="App_Data\Themes\default\assets\jcb.svg" />
     <Content Include="App_Data\Themes\default\assets\jquery.zoom.min.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-addresses.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-subscriptions.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-quotes.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-orders.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-profile-update.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\accountApi.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\%24account.js" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-password-change.js" />
     <Content Include="App_Data\Themes\default\assets\js\cart.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-totals.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-totals.tpl.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-lineItems.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-creditCard.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\totals.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\totals.tpl.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\lineItems.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\labeled-input.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\creditCard.js" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-coupon.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-lineItems.tpl.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-coupon.tpl.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-paymentMethods.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-creditCard.tpl.html.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-paymentMethods.tpl.html" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\lineItems.tpl.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-coupon.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Themes\default\assets\js\common-components\paymentMethods.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\creditCard.tpl.html.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\paymentMethods.tpl.liquid" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-shippingMethods.js" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-shippingMethods.tpl.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-shippingMethods.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-wizard-step.js" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-wizard-step.tpl.html" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-wizard.js" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-wizard.tpl.html" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-email.tpl.html.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-address.tpl.html.liquid" />
-    <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-address.js" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\address.tpl.html.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\address.js" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout-email.js" />
     <Content Include="App_Data\Themes\default\assets\js\checkout\checkout.js" />
     <Content Include="App_Data\Themes\default\assets\js\quote-request.js" />
+    <Content Include="App_Data\Themes\default\assets\js\product-compare.js" />
     <Content Include="App_Data\Themes\default\assets\klarna-big.png" />
     <Content Include="App_Data\Themes\default\assets\laser.svg" />
     <Content Include="App_Data\Themes\default\assets\litecoin.svg" />
@@ -479,6 +428,31 @@
     <Content Include="App_Data\x64\libsassnet.dll" />
     <Content Include="App_Data\x86\LibSass.x86.dll" />
     <Content Include="App_Data\x86\libsassnet.dll" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-password-change.tpl.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-profile-update.tpl.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-orders.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Themes\default\assets\js\account\account-quotes.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Themes\default\layout\account_layout.liquid" />
+    <Content Include="App_Data\Themes\default\assets\account-bootstrap.css" />
+    <Content Include="App_Data\Themes\default\assets\js\common-components\labeled-input.tpl.html.liquid" />
+    <Content Include="App_Data\Themes\default\assets\js\account\account-subscriptions.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Themes\default\assets\js\account\account-addresses.tpl.liquid">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Themes\default\snippets\quick-order-section.liquid" />
+    <Content Include="App_Data\Themes\default\snippets\google-tag-manager-head.liquid" />
+    <Content Include="App_Data\Themes\default\snippets\google-tag-manager-body.liquid" />
+    <Content Include="App_Data\Themes\default\snippets\bulk-order-fields-column.liquid" />
+    <Content Include="App_Data\Themes\default\templates\bulk-order.liquid" />
+    <Content Include="App_Data\Themes\default\templates\product-compare.liquid" />
+    <Content Include="App_Data\Themes\default\snippets\product-compare-list-dialog.liquid" />
+    <None Include="AutoRestClients\!readme.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -490,54 +464,86 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="App_Start\AdminAreaRegistration.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\CssUrlTransform.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="AutoRestClients\CacheModuleApi.cs" />
+    <Compile Include="AutoRestClients\CartModuleApi.cs" />
+    <Compile Include="AutoRestClients\CatalogModuleApi.cs" />
+    <Compile Include="AutoRestClients\ContentModuleApi.cs" />
+    <Compile Include="AutoRestClients\CoreModuleApi.cs" />
+    <Compile Include="AutoRestClients\CustomerModuleApi.cs" />
+    <Compile Include="AutoRestClients\InventoryModuleApi.cs" />
+    <Compile Include="AutoRestClients\MarketingModuleApi.cs" />
+    <Compile Include="AutoRestClients\OrdersModuleApi.cs" />
+    <Compile Include="AutoRestClients\PlatformModuleApi.cs" />
+    <Compile Include="AutoRestClients\PricingModuleApi.cs" />
+    <Compile Include="AutoRestClients\QuoteModuleApi.cs" />
+    <Compile Include="AutoRestClients\SearchApiModuleApi.cs" />
+    <Compile Include="AutoRestClients\SearchModuleApi.cs" />
+    <Compile Include="AutoRestClients\SitemapsModuleApi.cs" />
+    <Compile Include="AutoRestClients\StoreModuleApi.cs" />
+    <Compile Include="AutoRestClients\SubscriptionModuleApi.cs" />
+    <Compile Include="Binders\OrderTypesModelBinder.cs" />
+    <Compile Include="BackgroundJobs\GenerateSitemapJob.cs" />
+    <Compile Include="Binders\CartTypesModelBinder.cs" />
+    <Compile Include="Common\AppBuilderExtension.cs" />
+    <Compile Include="Common\FeedResult.cs" />
+    <Compile Include="Common\HmacCredentials.cs" />
+    <Compile Include="Common\HmacUtility.cs" />
+    <Compile Include="Common\OutlineExtensions.cs" />
+    <Compile Include="Common\ServiceClientExtensions.cs" />
+    <Compile Include="Common\VirtoCommerceApiRequestHandler.cs" />
     <Compile Include="Builders\CartBuilder.cs" />
     <Compile Include="Builders\QuoteRequestBuilder.cs" />
     <Compile Include="Common\BlobConnectionString.cs" />
     <Compile Include="Common\HandleJsonErrorAttribute.cs" />
     <Compile Include="Common\IdentityExtensions.cs" />
-    <Compile Include="Common\LocalizationExtension.cs" />
-    <Compile Include="Common\NameValueCollectionExtensions.cs" />
     <Compile Include="Common\ObjectExtensions.cs" />
     <Compile Include="Common\RequireHttps.cs" />
     <Compile Include="Common\SeoExtensions.cs" />
-    <Compile Include="Common\CurrentUserRestRequestHandler.cs" />
+    <Compile Include="Controllers\Api\ApiSubscriptionController.cs" />
+    <Compile Include="Controllers\Api\ApiOrderController.cs" />
+    <Compile Include="Controllers\Api\ApiBlogController.cs" />
     <Compile Include="Controllers\Api\ApiQuoteRequestController.cs" />
     <Compile Include="Controllers\Api\ApiCommonController.cs" />
     <Compile Include="Controllers\Api\ApiAccountController.cs" />
     <Compile Include="Controllers\Api\ApiPricingController.cs" />
     <Compile Include="Controllers\Api\ApiMarketingController.cs" />
+    <Compile Include="Controllers\BulkOrderController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
+    <Compile Include="Controllers\StaticContentController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Controllers\QuoteRequestController.cs" />
-    <Compile Include="Converters\AssociationConverter.cs" />
-    <Compile Include="Converters\AttachmentConverter.cs" />
     <Compile Include="Converters\SettingConverter.cs" />
-    <Compile Include="Converters\CatalogPropertyConverter.cs" />
-    <Compile Include="Converters\CatalogSearchCriteriaConverter.cs" />
-    <Compile Include="Converters\PriceEvaluationContextConverter.cs" />
-    <Compile Include="Converters\TaxEvaluationContextConverter.cs" />
-    <Compile Include="Converters\TaxRateConverter.cs" />
+    <Compile Include="Converters\Pricing\PricingConverter.cs" />
+    <Compile Include="Converters\Subscriptions\SubscriptionConverter.cs" />
+    <Compile Include="Converters\Tax\TaxConverter.cs" />
     <Compile Include="Converters\CurrencyConverter.cs" />
-    <Compile Include="Converters\PricelistConverter.cs" />
-    <Compile Include="Converters\QuoteItemConverter.cs" />
-    <Compile Include="Converters\QuoteRequestConverter.cs" />
-    <Compile Include="Converters\QuoteRequestTotalsConverter.cs" />
-    <Compile Include="Converters\ShippingMethodConverter.cs" />
-    <Compile Include="Converters\TierPriceConverter.cs" />
-    <Compile Include="Converters\VendorConverters.cs" />
+    <Compile Include="Converters\Quote\QuoteConverter.cs" />
+    <Compile Include="Converters\ToolsConverter.cs" />
+    <Compile Include="JsonConverters\MoneyJsonConverter.cs" />
+    <Compile Include="JsonConverters\CurrencyJsonConverter.cs" />
     <Compile Include="Owin\StorefrontUrlRewriterOwinMiddleware.cs" />
-    <Compile Include="Services\CartValidator.cs" />
+    <Compile Include="Routing\ISeoRouteService.cs" />
+    <Compile Include="Routing\SeoEntity.cs" />
+    <Compile Include="Routing\SeoRouteResponse.cs" />
+    <Compile Include="Routing\SeoRouteService.cs" />
+    <Compile Include="Services\ChangesTrackingService.cs" />
     <Compile Include="Services\ContentBlobProviders\AzureBlobContentProvider.cs" />
     <Compile Include="Services\ContentBlobProviders\FileSystemContentBlobProvider.cs" />
     <Compile Include="Services\CustomerServiceImpl.cs" />
+    <Compile Include="Services\IChangesTrackingService.cs" />
     <Compile Include="Services\LinkListServiceImpl.cs" />
     <Compile Include="Services\PricingServiceImpl.cs" />
     <Compile Include="Controllers\Api\ApiCartController.cs" />
     <Compile Include="Controllers\Api\ApiCatalogController.cs" />
+    <Compile Include="Services\ProductAvailabilityService.cs" />
+    <Compile Include="Services\TaxEvaluator.cs" />
     <Compile Include="Services\PromotionEvaluator.cs" />
     <Compile Include="Common\StorefrontConstants.cs" />
     <Compile Include="Common\StorefrontUrlBuilder.cs" />
@@ -548,44 +554,22 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\StorefrontHomeController.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopifyCompatibilityController.cs" />
     <Compile Include="Controllers\StorefrontControllerBase.cs" />
     <Compile Include="Converters\AddressConverter.cs" />
-    <Compile Include="Converters\AggregationConverters.cs" />
-    <Compile Include="Converters\AssetConverter.cs" />
-    <Compile Include="Converters\CartPaymentMethodConverter.cs" />
-    <Compile Include="Converters\CartShipmentItemConverter.cs" />
-    <Compile Include="Converters\CartShipmentMethodConverter.cs" />
     <Compile Include="Converters\ContactUsFormConverter.cs" />
-    <Compile Include="Converters\DiscountConverter.cs" />
-    <Compile Include="Converters\DynamicContentConverter.cs" />
     <Compile Include="Converters\DynamicPropertyConverter.cs" />
-    <Compile Include="Converters\CartConverter.cs" />
-    <Compile Include="Converters\CartLineItemConverter.cs" />
-    <Compile Include="Converters\CategoryConverter.cs" />
-    <Compile Include="Converters\CustomerConverter.cs" />
-    <Compile Include="Converters\InPaymentConverter.cs" />
+    <Compile Include="Converters\Cart\CartConverter.cs" />
+    <Compile Include="Converters\Customer\CustomerConverter.cs" />
     <Compile Include="Converters\InventoryConverter.cs" />
-    <Compile Include="Converters\MenuLinkConverter.cs" />
-    <Compile Include="Converters\OperationConverter.cs" />
-    <Compile Include="Converters\OrderConverter.cs" />
-    <Compile Include="Converters\OrderLineItemConverter.cs" />
-    <Compile Include="Converters\PaymentConverter.cs" />
-    <Compile Include="Converters\PriceConverter.cs" />
-    <Compile Include="Converters\ProductConverter.cs" />
-    <Compile Include="Converters\PromotionConverter.cs" />
-    <Compile Include="Converters\PromotionEvaluationContextConverter.cs" />
-    <Compile Include="Converters\PromotionProductEntryConverter.cs" />
-    <Compile Include="Converters\PromotionRewardConverter.cs" />
+    <Compile Include="Converters\LinkList\LinkListConverter.cs" />
+    <Compile Include="Converters\Order\OrderConverter.cs" />
+    <Compile Include="Converters\Catalog\CatalogConverter.cs" />
+    <Compile Include="Converters\Marketing\MarketingConverter.cs" />
     <Compile Include="Converters\SeoInfoConverter.cs" />
-    <Compile Include="Converters\ShipmentConverter.cs" />
-    <Compile Include="Converters\ShipmentItemConverter.cs" />
-    <Compile Include="Converters\ShipmentPackageConverter.cs" />
-    <Compile Include="Converters\StoreConverter.cs" />
-    <Compile Include="Converters\TaxDetailConverter.cs" />
+    <Compile Include="Converters\Store\StoreConverter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -609,6 +593,9 @@
     <Content Include="App_Data\Themes\default\templates\vendor.liquid" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -644,7 +631,9 @@
     <Content Include="App_Data\Themes\default\snippets\collection-views.liquid" />
     <Content Include="App_Data\Themes\default\snippets\comment.liquid" />
     <Content Include="App_Data\Themes\default\snippets\content_header.liquid" />
-    <Content Include="App_Data\Themes\default\snippets\customer-menu.liquid" />
+    <Content Include="App_Data\Themes\default\snippets\customer-menu.liquid">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Themes\default\snippets\error_popup.liquid" />
     <Content Include="App_Data\Themes\default\snippets\featured-collection.liquid" />
     <Content Include="App_Data\Themes\default\snippets\featured-row.liquid" />
@@ -699,7 +688,9 @@
     <Content Include="App_Data\Themes\default\templates\customers\addresses.liquid" />
     <Content Include="App_Data\Themes\default\templates\customers\login.liquid" />
     <Content Include="App_Data\Themes\default\templates\customers\order.liquid" />
-    <Content Include="App_Data\Themes\default\templates\customers\quote-requests.liquid" />
+    <Content Include="App_Data\Themes\default\templates\customers\quote-requests.liquid">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Themes\default\templates\customers\register.liquid" />
     <Content Include="App_Data\Themes\default\templates\customers\reset_password.liquid" />
     <Content Include="App_Data\Themes\default\templates\error.liquid" />
@@ -721,7 +712,9 @@
     <Content Include="App_Data\Themes\default\templates\checkout.liquid">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\Themes\default\templates\cart.liquid" />
+    <Content Include="App_Data\Themes\default\templates\cart.liquid">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Themes\default\templates\thanks.liquid" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

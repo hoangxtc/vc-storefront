@@ -57,15 +57,52 @@ namespace VirtoCommerce.Storefront.Model.Common
             return null;
         }
 
-        public static Tuple<string, string> SplitIntoTuple(this string input, char separator)
+        public static Tuple<string, string, string> SplitIntoTuple(this string input, char separator)
         {
-            if(input == null)
+            if (input == null)
             {
                 throw new ArgumentNullException("input");
             }
 
             var pieces = input.Split(separator);
-            return Tuple.Create(pieces.FirstOrDefault(), pieces.Skip(1).FirstOrDefault());
+            return Tuple.Create(pieces.FirstOrDefault(), pieces.Skip(1).FirstOrDefault(), pieces.Skip(2).FirstOrDefault());
+        }
+
+        public static string RemoveAccent(this string txt)
+        {
+            var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(txt);
+            return Encoding.ASCII.GetString(bytes);
+        }
+
+        public static string Handelize(this string phrase)
+        {
+            var retVal = phrase;
+            if (phrase != null)
+            {
+                retVal = phrase.RemoveAccent().ToLower();
+
+                retVal = Regex.Replace(retVal, @"[^a-z0-9\s-]", ""); // invalid chars           
+                retVal = Regex.Replace(retVal, @"\s+", " ").Trim(); // convert multiple spaces into one space   
+                retVal = retVal.Substring(0, retVal.Length <= 240 ? retVal.Length : 240).Trim(); // cut and trim it   
+                retVal = Regex.Replace(retVal, @"\s", "-"); // hyphens   
+            }
+            return retVal;
+        }
+
+        //http://www.ietf.org/rfc/rfc3986.txt
+        //section 4.2 Relative reference
+        //Remove leading protocol scheme from uri. http://host/path -> //host/path
+        public static string RemoveLeadingUriScheme(this string str)
+        {
+            if (!string.IsNullOrEmpty(str) && Uri.IsWellFormedUriString(str, UriKind.Absolute))
+            {
+                //remove scheme from image url
+                //http://www.ietf.org/rfc/rfc3986.txt
+                //section 4.2
+                var uri = new Uri(str);
+                str = "//" + uri.Authority + uri.PathAndQuery;
+            }
+            return str;
         }
     }
 }

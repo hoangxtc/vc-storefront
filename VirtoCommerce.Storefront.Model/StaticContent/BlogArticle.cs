@@ -8,7 +8,7 @@ namespace VirtoCommerce.Storefront.Model.StaticContent
     /// <summary>
     /// TODO: Comments and author user info
     /// </summary>
-    public class BlogArticle : ContentItem
+    public partial class BlogArticle : ContentItem
     {
         private static string _excerpToken = "<!--excerpt-->";
 
@@ -20,7 +20,11 @@ namespace VirtoCommerce.Storefront.Model.StaticContent
 
         public string ImageUrl { get; set; }
 
-        public override void LoadContent(string content, IDictionary<string, IEnumerable<string>> metaInfoMap, IDictionary themeSettings)
+        public bool IsSticked { get; set; }
+
+        public bool IsTrending { get; set; }
+
+        public override void LoadContent(string content, IDictionary<string, IEnumerable<string>> metaInfoMap)
         {
             var parts = content.Split(new[] { _excerpToken }, StringSplitOptions.None);
 
@@ -40,7 +44,25 @@ namespace VirtoCommerce.Storefront.Model.StaticContent
                 Excerpt = metaInfoMap["excerpt"].FirstOrDefault();
             }
 
-            base.LoadContent(content, metaInfoMap, themeSettings);
+            if (metaInfoMap.ContainsKey("is-sticked"))
+            {
+                var isSticked = false;
+
+                bool.TryParse(metaInfoMap["is-sticked"].FirstOrDefault(), out isSticked);
+
+                IsSticked = isSticked;
+            }
+
+            if (metaInfoMap.ContainsKey("is-trending"))
+            {
+                var isTrending = false;
+
+                bool.TryParse(metaInfoMap["is-trending"].FirstOrDefault(), out isTrending);
+
+                IsTrending = isTrending;
+            }
+
+            base.LoadContent(content, metaInfoMap);
         }
     }
 }

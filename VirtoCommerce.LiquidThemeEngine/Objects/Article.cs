@@ -6,7 +6,7 @@ namespace VirtoCommerce.LiquidThemeEngine.Objects
     /// <summary>
     /// https://docs.shopify.com/themes/liquid-documentation/objects/article
     /// </summary>
-    public class Article : Page
+    public partial class Article : Page
     {
         public Article()
         {
@@ -40,5 +40,10 @@ namespace VirtoCommerce.LiquidThemeEngine.Objects
         public ArticleUser User { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public bool IsSticked { get; set; }
+        public bool IsTrending { get; set; }
+
+        public string Category { get; set; }
     }
 }
