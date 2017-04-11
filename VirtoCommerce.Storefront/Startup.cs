@@ -42,6 +42,7 @@ using VirtoCommerce.Storefront.AutoRestClients.SearchApiModuleApi;
 using VirtoCommerce.Storefront.AutoRestClients.SitemapsModuleApi;
 using VirtoCommerce.Storefront.AutoRestClients.StoreModuleApi;
 using VirtoCommerce.Storefront.AutoRestClients.SubscriptionModuleApi;
+using VirtoCommerce.Storefront.AutoRestClients.ProductRecommendationsModuleApi;
 using VirtoCommerce.Storefront.BackgroundJobs;
 using VirtoCommerce.Storefront.Binders;
 using VirtoCommerce.Storefront.Builders;
@@ -66,6 +67,8 @@ using VirtoCommerce.Storefront.Owin;
 using VirtoCommerce.Storefront.Routing;
 using VirtoCommerce.Storefront.Services;
 using VirtoCommerce.Tools;
+using VirtoCommerce.Storefront.Model.Recommendations;
+using VirtoCommerce.Storefront.Services.Recommendations;
 
 [assembly: OwinStartup(typeof(Startup))]
 [assembly: PreApplicationStartMethod(typeof(Startup), "PreApplicationStart")]
@@ -222,6 +225,7 @@ namespace VirtoCommerce.Storefront
             container.RegisterType<ISitemapsModuleApiClient>(new PerRequestLifetimeManager(), new InjectionFactory(c => new SitemapsModuleApiClient(baseUri, c.Resolve<VirtoCommerceApiRequestHandler>(), compressionHandler).DisableRetries()));
             container.RegisterType<IStoreModuleApiClient>(new PerRequestLifetimeManager(), new InjectionFactory(c => new StoreModuleApiClient(baseUri, c.Resolve<VirtoCommerceApiRequestHandler>(), compressionHandler).DisableRetries()));
             container.RegisterType<ISubscriptionModuleApiClient>(new PerRequestLifetimeManager(), new InjectionFactory(c => new SubscriptionModuleApiClient(baseUri, c.Resolve<VirtoCommerceApiRequestHandler>(), compressionHandler).DisableRetries()));
+            container.RegisterType<IProductRecommendationsModuleApiClient>(new PerRequestLifetimeManager(), new InjectionFactory(c => new ProductRecommendationsModuleApiClient(baseUri, c.Resolve<VirtoCommerceApiRequestHandler>(), compressionHandler)));
 
             container.RegisterType<IMarketingService, MarketingServiceImpl>();
             container.RegisterType<IPromotionEvaluator, PromotionEvaluator>();
@@ -238,6 +242,9 @@ namespace VirtoCommerce.Storefront
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(context => HttpContext.Current.GetOwinContext().Authentication));
             container.RegisterType<IUrlBuilder, UrlBuilder>();
             container.RegisterType<IStorefrontUrlBuilder, StorefrontUrlBuilder>(new PerRequestLifetimeManager());
+
+            container.RegisterType<IRecommendationsService, CognitiveRecommendationsService>("Cognitive");
+            container.RegisterType<IRecommendationsService, AssociationRecommendationsService>("Association");
 
             //Register domain events
             container.RegisterType<IEventPublisher<OrderPlacedEvent>, EventPublisher<OrderPlacedEvent>>();
@@ -291,13 +298,15 @@ namespace VirtoCommerce.Storefront
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters, workContextFactory, () => container.Resolve<CommonController>());
             RouteConfig.RegisterRoutes(RouteTable.Routes, container.Resolve<ISeoRouteService>(), workContextFactory, () => container.Resolve<IStorefrontUrlBuilder>());
             AuthConfig.ConfigureAuth(app, () => container.Resolve<IStorefrontUrlBuilder>());
-            container.Resolve<BundleConfig>().RegisterBundles(BundleTable.Bundles);
+            var bundleConfig = container.Resolve<BundleConfig>();
+            bundleConfig.Minify = ConfigurationManager.AppSettings.GetValue("VirtoCommerce:Storefront:OptimizeStaticContent", false);
+            bundleConfig.RegisterBundles(BundleTable.Bundles);
 
             //This special binders need because all these types not contains default ctor and Money with Currency properties
             ModelBinders.Binders.Add(typeof(Model.Cart.Shipment), new CartModelBinder<Model.Cart.Shipment>(workContextFactory));
             ModelBinders.Binders.Add(typeof(Model.Cart.Payment), new CartModelBinder<Model.Cart.Payment>(workContextFactory));
             ModelBinders.Binders.Add(typeof(Model.Order.PaymentIn), new OrderModelBinder<Model.Order.PaymentIn>(workContextFactory));
-
+            ModelBinders.Binders.Add(typeof(Model.Recommendations.RecommendationEvalContext), new ReccomendationsModelBinder<Model.Recommendations.RecommendationEvalContext>());
             app.Use<WorkContextOwinMiddleware>(container);
             app.UseStageMarker(PipelineStage.PostAuthorize);
             app.Use<StorefrontUrlRewriterOwinMiddleware>(container);
