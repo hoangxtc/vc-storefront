@@ -104,6 +104,7 @@
     <Compile Include="Common\LocalCacheManager.cs" />
     <Compile Include="Common\MutablePagedList.cs" />
     <Compile Include="Common\NameValueCollectionExtensions.cs" />
+    <Compile Include="Common\NumericRange.cs" />
     <Compile Include="Common\SortInfo.cs" />
     <Compile Include="Common\TypeExtensions.cs" />
     <Compile Include="Interaction\UserEvent.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Interaction\Page.cs" />
     <Compile Include="Interaction\Client.cs" />
     <Compile Include="Interaction\UserSession.cs" />
+    <Compile Include="Inventory\FulfilmentCenter.cs" />
     <Compile Include="Recommendations\CognitiveRecommendationEvalContext.cs" />
     <Compile Include="Recommendations\IRecommendationsService.cs" />
     <Compile Include="Recommendations\RecommendationEvalContext.cs" />

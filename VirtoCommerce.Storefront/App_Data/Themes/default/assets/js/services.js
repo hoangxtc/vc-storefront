@@ -55,6 +55,9 @@ storefrontApp.service('catalogService', ['$http', function ($http) {
         },
         search: function (criteria) {
             return $http.post('storefrontapi/catalog/search', { searchCriteria: criteria });
+        },
+        searchCategories: function (criteria) {
+            return $http.post('storefrontapi/categories/search', { searchCriteria: criteria });
         }
     }
 }]);
@@ -114,6 +117,23 @@ storefrontApp.service('cartService', ['$http', function ($http) {
         },
         createOrder: function (bankCardInfo) {
             return $http.post('storefrontapi/cart/createorder', { bankCardInfo: bankCardInfo });
+        }
+    }
+}]);
+
+storefrontApp.service('listService', ['$http', function ($http) {
+    return {
+        getWishlist: function (listName) {
+            return $http.get('storefrontapi/lists/' + listName + '?t=' + new Date().getTime());
+        },
+        contains: function (productId, listName) {
+            return $http.get('storefrontapi/lists/' + listName +'/items/'+ productId + '/contains?t=' + new Date().getTime());
+        },
+        addLineItem: function (productId, listName) {
+            return $http.post('storefrontapi/lists/' + listName + '/items', { productId: productId });
+        },
+        removeLineItem: function (lineItemId, listName) {
+            return $http.delete('storefrontapi/lists/' + listName + '/items/' + lineItemId);
         }
     }
 }]);
